@@ -1,0 +1,94 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.7565656700290853 -0.5179756010459133 -0.3991361467651935 5.3689091372687
+  position 0.6274686059133775 0.9129227085299121 1.231736603076809
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+  castShadows FALSE
+}
+RectangleArena {
+  translation -0.251059 -4.4409e-16 0.222497
+  floorSize 2 2
+}
+E-puck {
+  translation 0.0444523 -0.000158198 0.64899
+  rotation -0.9976602131400686 -0.06550227525470531 0.019584459496494153 -0.0019559178375781147
+  controller "ObjectDetection_v1"
+  camera_width 640
+  camera_height 640
+  turretSlot [
+    DistanceSensor {
+      translation 0.03 -0.01 0
+      name "IR_right"
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation -0.03 -0.01 0
+      name "IR_left"
+      type "infra-red"
+    }
+    Camera {
+      translation 0 0.15 0
+      name "camera_top"
+      fieldOfView 1
+      width 600
+      height 600
+      far 1
+      recognition Recognition {
+        occlusion FALSE
+        segmentation TRUE
+      }
+    }
+  ]
+}
+Solid {
+  translation -0.0639442 0.1 0.361315
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/Markings.jpg"
+          ]
+        }
+        roughnessMap ImageTexture {
+          url [
+            "textures/Markings.jpg"
+          ]
+        }
+        metalness 0
+        normalMap ImageTexture {
+          url [
+            "textures/wooden_box_normal.jpg"
+          ]
+        }
+        occlusionMap ImageTexture {
+          url [
+            "textures/wooden_box_occlusion.jpg"
+          ]
+        }
+      }
+      geometry Box {
+        size 0.1 0.15 0.6
+      }
+      castShadows FALSE
+    }
+  ]
+  name "wooden box"
+  model "wooden box"
+  boundingObject Box {
+    size 0.1 0.15 0.6
+  }
+  physics Physics {
+    density -1
+    mass 0.2
+  }
+  recognitionColors [
+    1 0 0
+  ]
+}

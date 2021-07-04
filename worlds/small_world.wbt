@@ -1,0 +1,26 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.999999147600846 -0.0011463739117304435 -0.0006249995486306783 5.284888263900722
+  position -0.3387949589916083 2.2711583569399054 1.6773875070725064
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+  castShadows FALSE
+}
+RectangleArena {
+  translation -0.251059 -4.4409e-16 0.222497
+}
+E-puck {
+  translation -0.433902 -6.39203e-05 0.614782
+  rotation 0.0003235692342834062 1.033310040832417e-10 0.9999999476514739 6.06197037975961e-06
+  controller "my_controller_objectDetection_v1"
+}
+WoodenBox {
+  translation -0.426944 0.1 -0.0555448
+  size 0.15 0.15 0.15
+  mass 1
+}
