@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.7565656700290853 -0.5179756010459133 -0.3991361467651935 5.3689091372687
-  position 0.6274686059133775 0.9129227085299121 1.231736603076809
+  orientation 0.9584955488389201 0.24014080705805585 -0.15368368697256926 5.544496139489944
+  position -0.2518179842895532 1.8653172095401909 2.5556927045697293
 }
 TexturedBackground {
 }
@@ -16,25 +16,98 @@ RectangleArena {
   floorSize 2 2
 }
 E-puck {
-  translation 0.0444523 -0.000158198 0.64899
+  translation -0.616189 -0.000158198 0.49347
   rotation -0.9976602131400686 -0.06550227525470531 0.019584459496494153 -0.0019559178375781147
   controller "ObjectDetection_v1"
   camera_width 640
   camera_height 640
   turretSlot [
     DistanceSensor {
-      translation 0.03 -0.01 0
-      name "IR_right"
-      type "infra-red"
+      name "ds2"
+      lookupTable [
+        0 0 0
+        0.1 1000 0
+        0.2 2000 0
+      ]
     }
     DistanceSensor {
-      translation -0.03 -0.01 0
-      name "IR_left"
-      type "infra-red"
+      rotation 0 1 0 0.78
+      name "ds1"
+      lookupTable [
+        0 0 0
+        0.1 1000 0
+        0.2 2000 0
+      ]
+    }
+    DistanceSensor {
+      rotation 0 1 0 1.3
+      name "ds0"
+      lookupTable [
+        0 0 0
+        0.1 1000 0
+        0.2 2000 0
+      ]
+    }
+    DistanceSensor {
+      rotation 0 1 0 1.83
+      name "ds7"
+      lookupTable [
+        0 0 0
+        0.1 1000 0
+        0.2 2000 0
+      ]
+    }
+    DistanceSensor {
+      rotation 0 1 0 2.35
+      name "ds6"
+      lookupTable [
+        0 0 0
+        0.1 1000 0
+        0.2 2000 0
+      ]
+    }
+    DistanceSensor {
+      rotation 0 1 0 3.14
+      name "ds5"
+      lookupTable [
+        0 0 0
+        0.1 1000 0
+        0.2 2000 0
+      ]
+    }
+    DistanceSensor {
+      rotation 0 1 0 -2.1031853071795865
+      name "ds4"
+      lookupTable [
+        0 0 0
+        0.1 1000 0
+        0.2 2000 0
+      ]
+    }
+    DistanceSensor {
+      rotation 0 1 0 -1.0531853071795858
+      name "ds3"
+      lookupTable [
+        0 0 0
+        0.1 1000 0
+        0.2 2000 0
+      ]
     }
     Camera {
       translation 0 0.15 0
       name "camera_top"
+      fieldOfView 1
+      width 600
+      height 600
+      far 1
+      recognition Recognition {
+        occlusion FALSE
+        segmentation TRUE
+      }
+    }
+    Camera {
+      translation 0 0.1 0
+      name "camera_left"
       fieldOfView 1
       width 600
       height 600
@@ -76,7 +149,6 @@ Solid {
       geometry Box {
         size 0.1 0.15 0.6
       }
-      castShadows FALSE
     }
   ]
   name "wooden box"
